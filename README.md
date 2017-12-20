@@ -1,4 +1,4 @@
-#SMSSpamFilter
+# SMSSpamFilter
 
 ## Introduction
 Is a project that allows you to discern if a short message (essentially an SMS) is a spam or not. This is possible thanks to a binary classification model obtained by applying machine algorithms.
