@@ -4,10 +4,11 @@ from spamdetector.log import logging
 from spamdetector import factory
 from spamdetector import configuration as config
 
-"""
-This class is in charge of generating or detecting the best Pipeline using the provided configuration
-"""
+
 class PipelineSelector:
+    """
+    This class is in charge of generating or detecting the best Pipeline using the provided configuration
+    """
     def __init__(self, dataset:Dataset, metaclassifier):
         self.dataset = dataset
         self.metaclassifier = metaclassifier

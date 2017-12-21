@@ -4,10 +4,11 @@ from spamdetector.document import Document
 from spamdetector.document import InvalidDocumentTypeException
 from spamdetector import configuration as config
 
-"""
-This class is responsible for the operations related to the text dataset
-"""
+
 class Dataset:
+    """
+    This class is responsible for the operations related to the text dataset
+    """
     def __init__(self, file_path:str, vectorizer, dataset_splitter):
         self.file_path = file_path
         self.vectorizer = vectorizer

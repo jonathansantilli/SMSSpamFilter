@@ -41,7 +41,8 @@ def get_over_sampler_if_present():
     return over_sampler
 
 def create_reporter():
-    return Reporter(accuracy_score, classification_report, confusion_matrix)
+    return Reporter(accuracy_score_function=accuracy_score,
+        classification_report_function=classification_report, confusion_matrix_function=confusion_matrix)
 
 def get_pipeline():
     """

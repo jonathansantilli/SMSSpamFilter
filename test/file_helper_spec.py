@@ -10,7 +10,7 @@ with description('FileHelper'):
 
     with it('should verify if a file exist'):
         do_not_exists = FileHelper().exist_path('invalid_path')
-        exists =  FileHelper().exist_path(self.spam_ham_examples)
+        exists = FileHelper().exist_path(self.spam_ham_examples)
 
         expect(do_not_exists).to(be_false)
         expect(exists).to(be_true)

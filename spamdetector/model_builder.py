@@ -6,11 +6,12 @@ from spamdetector import configuration as config
 from spamdetector.dataset import Dataset
 from spamdetector.reporter import Reporter
 
-"""
-This class is core into the project.
-Have the responsibility to create the classification model and show the accuracy report
-"""
+
 class ModelBuilder:
+    """
+    This class is core into the project.
+    Have the responsibility to create the classification model and show the accuracy report
+    """
     def __init__(self, dataset:Dataset, reporter:Reporter, pipeline, over_sampler):
         self.dataset = dataset
         self.pipeline = pipeline

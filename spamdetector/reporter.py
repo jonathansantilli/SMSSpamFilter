@@ -1,14 +1,15 @@
 from spamdetector.log import logging
 
 
-"""
-The purpose of this class is to show the performance of the generated model
-"""
 class Reporter:
-    def __init__(self, accuracy_score, classification_report, confusion_matrix):
-        self.accuracy_score = accuracy_score
-        self.classification_report = classification_report
-        self.confusion_matrix = confusion_matrix
+    """
+    The purpose of this class is to show the performance of the generated model
+    """
+    def __init__(self, accuracy_score_function,
+            classification_report_function, confusion_matrix_function):
+        self.accuracy_score = accuracy_score_function
+        self.classification_report = classification_report_function
+        self.confusion_matrix = confusion_matrix_function
 
     def show_accuracy_score(self, y_test, y_predict):
         accuracy = self.accuracy_score(y_test, y_predict)

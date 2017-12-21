@@ -14,7 +14,8 @@ with description('Reporter'):
     with it('should show the accuracy report'):
         with Spy() as accuracy:
             accuracy.score(self.y_test, self.y_predict).returns(0.99)
-        reporter = Reporter(accuracy.score, None, None)
+        reporter = Reporter(accuracy_score_function=accuracy.score,
+            classification_report_function=None, confusion_matrix_function=None)
 
         reporter.show_accuracy_score(self.y_test, self.y_predict)
 
@@ -23,7 +24,8 @@ with description('Reporter'):
     with it('should show the precision, recall and f1_score report'):
         with Spy() as metric:
             metric.classification_report(self.y_test, self.y_predict).returns('')
-        reporter = Reporter(None, metric.classification_report, None)
+        reporter = Reporter(accuracy_score_function=None,
+            classification_report_function=metric.classification_report, confusion_matrix_function=None)
 
         reporter.show_precision_recall_and_f1_score(self.y_test, self.y_predict)
 
@@ -34,7 +36,8 @@ with description('Reporter'):
             cm = [[1, 0], [0, 1]]
             metric.confusion_matrix(self.y_test,
                 self.y_predict, labels=['category_1', 'category_2']).returns(cm)
-        reporter = Reporter(None, None, metric.confusion_matrix)
+        reporter = Reporter(accuracy_score_function=None,
+            classification_report_function=None, confusion_matrix_function=metric.confusion_matrix)
 
         reporter.show_confusion_matrix(self.y_test, self.y_predict)
 
