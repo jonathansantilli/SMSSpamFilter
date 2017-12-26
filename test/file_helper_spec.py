@@ -16,6 +16,7 @@ with description('FileHelper'):
         expect(exists).to(be_true)
 
     with it('should read a file using a pattern'):
+        NUMBER_OF_DOCS_EXAMPLES = 11
         pattern_separated_lines = FileHelper().read_pattern_separated_file(self.spam_ham_examples, '\t')
 
-        expect(len(pattern_separated_lines)).to(equal(11))
+        expect(len(pattern_separated_lines)).to(equal(NUMBER_OF_DOCS_EXAMPLES))
