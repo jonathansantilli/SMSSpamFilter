@@ -29,6 +29,8 @@ spam	I am a spam, please do not delet e m e, buy, click here, viagra
 
 The category or label of the example is `ham` or `spam` and **must be separated from the document data by a `tab`**, hence, the format of the data is a tab separated file.
 
+The dataset used to train the provided model could be found [here](http://www.esp.uem.es/jmgomez/smsspamcorpus/)
+
 # Requirements
 **It is highly recommended to execute everything within a [Python virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)**
 The computer used to run this project should have installed Python 3.5 and Make
